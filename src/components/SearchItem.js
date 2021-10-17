@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
+import './SearchItem.css'
+import Fab from '@mui/material/Fab';
+import  SearchIcon from '@mui/icons-material/Search';
 
-const SearchItem = () => {
-const [searchTitle, setSearchTitle] = useState()
-
+const SearchItem = ({itemSearcher}) => {
+const [searchTitle, setSearchTitle] = useState('');
+const searchHandler =(e) =>{
+e.preventDefault();
+itemSearcher(searchTitle);
+setSearchTitle('');
+}
     return (
-    <form  >
-      <input placeholder='Search Item' type='text'/>
-      <input type='submit' value='search' onChange={e =>setSearchTitle(e.target.value)}/>
+    <form className='searchForm' onSubmit={searchHandler} >
+      <input className='searchField' name='search' placeholder='Search Item' type='text' onChange={e =>setSearchTitle(e.target.value)}/>
+      <button className='searchBtn' ><SearchIcon /></button>
     </form>
   );
 }

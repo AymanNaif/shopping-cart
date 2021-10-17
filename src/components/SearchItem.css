@@ -1,0 +1,29 @@
+.searchForm{
+    margin-left: 25%;
+}
+
+.searchBtn{
+    margin-left: 10px;
+    width: 40px;
+    margin-right: 50px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(5,1,139,255)
+    ;
+    color: white;
+    border: none;
+    }
+
+.searchBtn:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;  
+      cursor: pointer;
+}
+.searchField{
+    margin-top: 3px;
+    height: 20px;
+    border-radius: 5px;
+    border: 0.1px solid rgb(158, 158, 158);
+    padding: 5px;
+    width: 200px;
+}
