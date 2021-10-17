@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import AddItem from './AddItem';
 import SearchItem from './SearchItem';
-
-
+import Fab from '@mui/material/Fab';
+import './ItemList.css'
+import RemoveIcon from '@mui/icons-material/Remove';
 const ItemList = () => {
 
-  const [items, setItems] = useState(['ayman','naif','we']);
+  const [items, setItems] = useState(['Item Title','Item Title','Item Title','Item Title']);
+  const itemSearcher = (searchTitle) =>{
+    let newArr = items.filter(word=>word === searchTitle)
+    if (newArr.length > 0){
+    setItems(newArr)
+  }
+
+
+  }
+
   const itemAdder = (title) => {
     setItems([...items, title]);
   };
@@ -17,19 +27,28 @@ const ItemList = () => {
       }
   return (
     <>
-        <SearchItem/>
+    <div className='listContanier'>
+       <div className='elemntOne'>
+        <SearchItem itemSearcher={itemSearcher}/>
+
        <AddItem itemAdder={itemAdder} />
+       </div>
+       <div className='elemntTwo'>
         {items.map((item,idx) => {
           if (item) {
           return (
-             <div key= {idx} id={idx}>
-               <h3>{item}</h3>
+             <div className='itemElemnt' key= {idx} id={idx}>
+               <p className='ItemTitle'>{item}</p>
                
-               <button name={idx} onClick={removeItem}>Remove</button>
+               <button className='ItemBtn' name={idx} onClick={removeItem}>
+               <RemoveIcon color='white'/></button>
              </div>
+             
              );
           }
         })}
+        </div>
+        </div>
     </>
   );
 }
