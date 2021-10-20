@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import './AddItem.css'
 import AddIcon from '@mui/icons-material/Add';
-import Fab from '@mui/material/Fab';
-
-
 
 const AddItem = ({ itemAdder }) => {
   const [title, setTitle] = useState('');
@@ -25,4 +22,3 @@ const AddItem = ({ itemAdder }) => {
 }
  
 export default AddItem;
-

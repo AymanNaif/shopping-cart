@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './SearchItem.css'
-import Fab from '@mui/material/Fab';
 import  SearchIcon from '@mui/icons-material/Search';
 
 const SearchItem = ({itemSearcher}) => {
